@@ -163,6 +163,7 @@ type Block struct {
 	LogsBloom        string
 	TransactionsRoot string
 	StateRoot        string
+	ReceiptsRoot     string
 	Miner            string
 	Difficulty       big.Int
 	TotalDifficulty  big.Int
@@ -253,6 +254,7 @@ type proxyBlockWithTransactions struct {
 	LogsBloom        string             `json:"logsBloom"`
 	TransactionsRoot string             `json:"transactionsRoot"`
 	StateRoot        string             `json:"stateRoot"`
+	ReceiptsRoot     string             `json:"receiptsRoot"`
 	Miner            string             `json:"miner"`
 	Difficulty       hexBig             `json:"difficulty"`
 	TotalDifficulty  hexBig             `json:"totalDifficulty"`
@@ -278,6 +280,7 @@ type proxyBlockWithoutTransactions struct {
 	LogsBloom        string   `json:"logsBloom"`
 	TransactionsRoot string   `json:"transactionsRoot"`
 	StateRoot        string   `json:"stateRoot"`
+	ReceiptsRoot     string   `json:"receiptsRoot"`
 	Miner            string   `json:"miner"`
 	Difficulty       hexBig   `json:"difficulty"`
 	TotalDifficulty  hexBig   `json:"totalDifficulty"`
@@ -300,6 +303,7 @@ func (proxy *proxyBlockWithoutTransactions) toBlock() Block {
 		LogsBloom:        proxy.LogsBloom,
 		TransactionsRoot: proxy.TransactionsRoot,
 		StateRoot:        proxy.StateRoot,
+		ReceiptsRoot:     proxy.ReceiptsRoot,
 		Miner:            proxy.Miner,
 		Difficulty:       big.Int(proxy.Difficulty),
 		TotalDifficulty:  big.Int(proxy.TotalDifficulty),

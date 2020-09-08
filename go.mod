@@ -1,1 +1,3 @@
-module github.com/onrik/ethrpc
+module github.com/xuxiaohu/ethrpc
+
+go 1.14
